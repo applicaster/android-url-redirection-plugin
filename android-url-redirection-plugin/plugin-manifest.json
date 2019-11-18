@@ -1,0 +1,48 @@
+{
+  "api": {
+    "require_startup_execution": true,
+    "class_name": "com.applicaster.android_url_redirection_plugin.UrlRedirectionPlugin",
+    "proguard_rules": "##---------------Proguard configuration for UrlRedirectionPlugin  ----------\n ## OkHttp specific rules ##\n-keepattributes Signature\n-keepattributes *Annotation*\n-keep class okhttp3.** { *; }\n-keep interface okhttp3.** { *; }\n-dontwarn okhttp3.**\n\n## \n-keep class com.applicaster.android_url_redirection_plugin.UrlRedirectionPlugin { *; }\n"
+  },
+  "dependency_repository_url": [
+    {
+      "url": "https://dl.bintray.com/applicaster-ltd/maven_plugins/"
+    }
+  ],
+  "platform": "android",
+  "author_name": "Alex Khomich",
+  "author_email": "a.khomich@applicaster.com",
+  "manifest_version": "0.0.1",
+  "dependency_version": "0.0.1",
+  "name": "Android URL Redirection Plugin",
+  "description": "",
+  "cover_image": "",
+  "type": "general",
+  "screen": false,
+  "preload": true,
+  "identifier": "android_url_redirection_plugin",
+  "ui_builder_support": true,
+  "dependency_name": "com.applicaster:android-url-redirection-plugin",
+  "whitelisted_account_ids": [],
+  "min_zapp_sdk": "11.3.0-preview21",
+  "deprecated_since_zapp_sdk": "",
+  "unsupported_since_zapp_sdk": "",
+  "react_native": false,
+  "custom_configuration_fields": [],
+  "hooks": {
+    "fields": [
+      {
+        "group": true,
+        "label": "Before Load",
+        "folded": true,
+        "fields": [
+          {
+            "key": "preload_plugins",
+            "type": "preload_plugins_selector",
+            "label": "Select Plugins"
+          }
+        ]
+      }
+    ]
+  }
+}

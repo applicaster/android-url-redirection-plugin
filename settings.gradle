@@ -1,0 +1,3 @@
+rootProject.name='UrlRedirectionPlugin'
+include ':app'
+include ':android-url-redirection-plugin'
