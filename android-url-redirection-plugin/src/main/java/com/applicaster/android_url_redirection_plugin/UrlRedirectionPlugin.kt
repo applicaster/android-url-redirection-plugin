@@ -19,7 +19,10 @@ class UrlRedirectionPlugin : HookScreen {
 		val url: String = entry?.playable?.contentVideoURL.orEmpty()
 		val redirectHandler = RedirectHandler { redirectUrl, errorMessage ->
 			//success
-			redirectUrl?.let { redirectedUrl -> entry?.content?.src = redirectedUrl }
+			redirectUrl?.let {
+				redirectedUrl -> entry?.content?.src = redirectedUrl
+				hookListener.hookCompleted(hookProps?.toMutableMap())
+			}
 			//failure
 			errorMessage?.let { hookListener.hookCompleted(hookProps?.toMutableMap()) }
 		}
