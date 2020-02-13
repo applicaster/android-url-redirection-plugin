@@ -1,10 +1,4 @@
-
-This is multiplatform repository for redirect url plugins.
-# QuickBrick
-	
-# android/android-url-redirection-plugin
-
-This repository contains the code for the plugin that handles redirection of stream urls on Android.
+The repository contains the code for Android mobile and AndroidTV via Quickbrick that handles redirection of stream urls
 
 ## Intro to Zapp Plugins
 
