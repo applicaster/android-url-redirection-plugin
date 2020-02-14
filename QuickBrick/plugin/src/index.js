@@ -20,7 +20,6 @@ export class RedirectUrlComponent extends React.Component<Props, State> {
 
   componentDidMount() {
     const { payload, callback } = this.props;
-    console.log(payload);
 
     const videoContentUrl = R.view(videoSourcePath, payload);
     if (!videoContentUrl) {
@@ -36,8 +35,6 @@ export class RedirectUrlComponent extends React.Component<Props, State> {
       .catch(function(error) {
         callback({ success: false, error })
       })
-      .finally(function() {
-      });
   }
 
   render() {
