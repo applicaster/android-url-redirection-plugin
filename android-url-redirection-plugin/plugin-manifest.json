@@ -24,7 +24,7 @@
   "ui_builder_support": true,
   "dependency_name": "com.applicaster:android-url-redirection-plugin",
   "whitelisted_account_ids": ["5c85455842b06d000836d041"],
-  "min_zapp_sdk": "11.3.0-preview21",
+  "min_zapp_sdk": "11.3.0-preview3",
   "deprecated_since_zapp_sdk": "",
   "unsupported_since_zapp_sdk": "",
   "react_native": false,
