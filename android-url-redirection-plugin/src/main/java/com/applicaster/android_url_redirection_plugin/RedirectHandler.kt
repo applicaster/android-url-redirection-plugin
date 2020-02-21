@@ -16,11 +16,7 @@ class RedirectHandler(private val redirectCallback: (redirectUrl: String?, error
 			}
 
 			override fun onResponse(call: Call, response: Response) {
-				if (response.isSuccessful) {
-					redirectCallback(response.request().url().toString(), null)
-				} else {
-					redirectCallback(null, response.message())
-				}
+				redirectCallback(response.request().url().toString(), response.message())
 			}
 		})
 	}
