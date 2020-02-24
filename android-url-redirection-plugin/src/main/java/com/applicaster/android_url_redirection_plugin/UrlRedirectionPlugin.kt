@@ -18,13 +18,15 @@ class UrlRedirectionPlugin : HookScreen {
 		val entry = hookProps?.get(KEY_HOOK_DATASOURSE) as? APAtomEntry
 		//obtain redirected url
 		val url: String = entry?.playable?.contentVideoURL.orEmpty()
-		val redirectHandler = RedirectHandler { redirectUrl, errorMessage ->
+		val redirectHandler = RedirectHandler { redirectedUrl, errorMessage ->
 			//success if not null
-			redirectUrl?.let { redirectedUrl ->
-				entry?.content?.src = redirectedUrl
+			redirectedUrl?.let { newUrl ->
+				entry?.content?.src = newUrl
 			}
 			//error if not null
-			errorMessage?.let { Log.e(this.javaClass.simpleName, errorMessage) }
+			errorMessage?.let { message ->
+				Log.e(this.javaClass.simpleName, message)
+			}
 			//finish hook
 			hookListener.hookCompleted(hookProps?.toMutableMap())
 		}
