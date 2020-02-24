@@ -3,7 +3,7 @@ package com.applicaster.android_url_redirection_plugin
 import okhttp3.*
 import java.io.IOException
 
-class RedirectHandler(private val redirectCallback: (redirectUrl: String?, errorMessage: String?) -> Unit) {
+class RedirectHandler(private val redirectCallback: (redirectedUrl: String?, errorMessage: String?) -> Unit) {
 	fun redirectUrl(url: String) {
 		val client = OkHttpClient().newBuilder()
 				.followRedirects(true)
