@@ -1,6 +1,7 @@
 package com.applicaster.android_url_redirection_plugin
 
 import android.content.Context
+import android.util.Log
 import com.applicaster.atom.model.APAtomEntry
 import com.applicaster.hook_screen.HookScreen
 import com.applicaster.hook_screen.HookScreenListener
@@ -17,14 +18,17 @@ class UrlRedirectionPlugin : HookScreen {
 		val entry = hookProps?.get(KEY_HOOK_DATASOURSE) as? APAtomEntry
 		//obtain redirected url
 		val url: String = entry?.playable?.contentVideoURL.orEmpty()
-		val redirectHandler = RedirectHandler { redirectUrl, errorMessage ->
-			//success
-			redirectUrl?.let {
-				redirectedUrl -> entry?.content?.src = redirectedUrl
-				hookListener.hookCompleted(hookProps?.toMutableMap())
+		val redirectHandler = RedirectHandler { redirectedUrl, errorMessage ->
+			//success if not null
+			redirectedUrl?.let { newUrl ->
+				entry?.content?.src = newUrl
 			}
-			//failure
-			errorMessage?.let { hookListener.hookCompleted(hookProps?.toMutableMap()) }
+			//error if not null
+			errorMessage?.let { message ->
+				Log.e(this.javaClass.simpleName, message)
+			}
+			//finish hook
+			hookListener.hookCompleted(hookProps?.toMutableMap())
 		}
 		redirectHandler.redirectUrl(url)
 	}
