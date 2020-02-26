@@ -4,22 +4,11 @@ import axios from "axios"
 import {View} from "react-native"
 import * as R from "ramda"
 
-type Props = {
-  configuration: {},
-  payload: {},
-  callback: ({ success: boolean, error: ?{}, payload: ?{} }) => void
-};
-
-type State = {}
-
 const videoSourcePath = R.lensPath(["content", "src"]);
 
-export class RedirectUrlComponent extends React.Component<Props, State> {
-
-  state = {};
-
-  componentDidMount() {
-    const { payload, callback } = this.props;
+function RedirectUrlComponent(props) {
+  useEffect(() => {
+    const { payload, callback } = props;
 
     const videoContentUrl = R.view(videoSourcePath, payload);
     if (!videoContentUrl) {
@@ -35,9 +24,6 @@ export class RedirectUrlComponent extends React.Component<Props, State> {
       .catch(function(error) {
         callback({ success: false, error })
       })
-  }
-
-  render() {
-    return (<View style={{ flex: 1 }}/>);
-  }
+  }, []);
+  return (<View style={{ flex: 1 }}/>);
 }
