@@ -1,0 +1,30 @@
+{
+  "name": "hook-redirect-url",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf ./node_modules ./plugin/node_modules yarn.lock && yarn",
+    "reset_dev_app": "rm -rf ./development-app/* ./development-app/.babelrc",
+    "zapplicaster:prepare": "node_modules/.bin/zapplicaster-cli prepare --yarn --destination-path development-app",
+    "zapplicaster:reload": "node_modules/.bin/zapplicaster-cli reload_config --destination-path development-app",
+    "start": "node_modules/.bin/react-native start --projectRoot ./development-app",
+    "publish_plugin": "yarn workspace @applicaster/quick-brick-redirect_url publish"
+  },
+  "workspaces": [
+    "plugin",
+    "development-app"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@applicaster/zapplicaster-cli": "^2.1.1"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.8.3",
+    "react": "16.8.3",
+    "react-native": "0.59.10"
+  }
+}

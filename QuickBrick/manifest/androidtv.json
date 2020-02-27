@@ -1,0 +1,30 @@
+{
+  "api": {
+    "require_startup_execution": false,
+    "modules": []
+  },
+  "dependency_name": "@applicaster/quick-brick-redirect_url",
+  "dependency_version": "0.1.2",
+  "author_name": "Vlad Sumtsov",
+  "platform": "android",
+  "author_email": "vlad.sumtsov@corewillsoft.com",
+  "manifest_version": "0.1.2",
+  "name": "Quick brick redirect url",
+  "description": "Hook plugin redirects url to the next one.",
+  "identifier": "redirect_url_quick_brick",
+  "min_zapp_sdk": "1.0.0",
+  "type": "general",
+  "screen": true,
+  "ui_builder_support": true,
+  "react_native": true,
+  "preload": true,
+  "targets": [
+    "tv"
+  ],
+  "npm_dependencies": [
+    "@applicaster/quick-brick-redirect_url@0.1.2"
+  ],
+  "whitelisted_account_ids": [
+    "5dfa81bb7c9ffb0008e35018"
+  ]
+}
