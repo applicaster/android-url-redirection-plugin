@@ -1,3 +1,4 @@
+### Deprecated - code is now part of QuickBrick
 The repository contains the code for Android mobile and AndroidTV via Quickbrick that handles redirection of stream urls
 
 ## Intro to Zapp Plugins
