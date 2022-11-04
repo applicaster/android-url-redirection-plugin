@@ -20,7 +20,7 @@
     "@applicaster/zapp-react-native-bridge": "^2.1.1"
   },
   "dependencies": {
-    "axios": "^0.19.1",
+    "axios": "^0.21.1",
     "ramda": "^0.26.1"
   }
 }
