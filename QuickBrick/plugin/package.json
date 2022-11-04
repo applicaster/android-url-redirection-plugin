@@ -11,12 +11,12 @@
   "license": "ISC",
   "devDependencies": {
     "react": "16.8.3",
-    "react-native": "0.59.10",
+    "react-native": "0.62.3",
     "@applicaster/zapp-react-native-bridge": "^2.1.1"
   },
   "peerDependencies": {
     "react": "16.8.3",
-    "react-native": "0.59.10",
+    "react-native": "0.62.3",
     "@applicaster/zapp-react-native-bridge": "^2.1.1"
   },
   "dependencies": {
